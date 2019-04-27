@@ -11,3 +11,5 @@ class Car {
         this.image = image;
     }
 }
+
+class UI {}
