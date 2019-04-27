@@ -9,44 +9,54 @@
 </head>
 <body>
     <div class="container">
-        <h1>Add Car</h1>
+        <h2>Add Car</h2>
         <form id="car-form">
-            <div>
-                <label for="vin-number">VIN</label>
-                <input type="text" id="vin-number" class="u-full-width"/>
-            </div>        
-            <div>
-                <label for="brand">Brand</label>
-                <input type="text" id="brand" class="u-full-width">
+            <div class="row">
+                <div class="six columns">
+                    <label for="vin-number">VIN</label>
+                    <input type="text" id="vin-number" class="u-full-width"/>
+                </div>        
+                <div class="six columns">
+                    <label for="brand">Brand</label>
+                    <input type="text" id="brand" class="u-full-width">
+                </div>
             </div>
-            <div>
-                <label for="model">Model</label>
-                <input type="text" id="model" class="u-full-width">
+            <div class="row">    
+                <div class="six columns">
+                    <label for="model">Model</label>
+                    <input type="text" id="model" class="u-full-width">
+                </div>
+                <div class="six columns">
+                    <label for="price">Price</label>
+                    <input type="number" id="price" class="u-full-width">
+                </div>
+            </div>  
+            <div class="row">  
+                <div class="six columns">
+                    <label for="year">Year</label>
+                    <input type="number" min="1980" max="2019" step="1" id="year" class="u-full-width">
+                </div>
+                <div class="six columns">
+                    <label for="mileage">Mileage</label>
+                    <input type="number" id="mileage" class="u-full-width">
+                </div>
             </div>
-            <div>
-                <label for="price">Price</label>
-                <input type="number" id="price" class="u-full-width">
+            <div class="row">    
+                <div class="six columns">
+                    <label for="engine-capacity">Engine Capacity</label>
+                    <input type="number" id="engine-capacity" class="u-full-width">
+                </div>
+                <div class="six columns">
+                    <label for="hp">Hp</label>
+                    <input type="number" id="hp" class="u-full-width">
+                </div>
+            </div>    
+            <div class="row">
+                <div class="six columns">
+                    <label for="image">Image</label>
+                    <input type="file" accept=".jpg, .jpeg, .png" id="image">
+                </div>
             </div>
-            <div>
-                <label for="year">Year</label>
-                <input type="number" min="1980" max="2019" step="1" id="year" class="u-full-width">
-            </div>
-            <div>
-                <label for="mileage">Mileage</label>
-                <input type="number" id="mileage" class="u-full-width">
-            </div>
-            <div>
-                <label for="engine-capacity">Engine Capacity</label>
-                <input type="number" id="engine-capacity" class="u-full-width">
-           </div>
-           <div>
-               <label for="hp">Hp</label>
-               <input type="number" id="hp" class="u-full-width">
-           </div>
-           <div>
-               <label for="image">Image</label>
-               <input type="file" accept=".jpg, .jpeg, .png" id="image">
-           </div>
         </form>
     </div>
 </body>
