@@ -42,6 +42,21 @@ class UI {
         document.getElementById('hp').value = '';
         document.getElementById('image').value = '';
     }
+
+    showAlert(msg, className) {
+        const divWithAlert = document.createElement('div');
+        const form = document.querySelector('#car-form');
+        const parentNode = form.parentNode;
+
+        divWithAlert.className = className;
+        divWithAlert.innerText = msg;
+        
+        parentNode.insertBefore(divWithAlert, form);
+
+        setTimeout(() => {
+            divWithAlert.remove();
+        }, 3000);
+    }
 }
 
 //Event Listeners for add car
@@ -66,11 +81,22 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
     //Instantiete UI
     const ui = new UI();
 
-    //Add created car to list
-    ui.addCarToList(car);
+    //Validate
+    if (vin === '' || brand === '' || model === '' || price === '' || year === '' ||
+        mileage === '' || engineCapacity === '' || hp === '' || img === '') {
+        //Error alert
+        ui.showAlert('Please fill in all fields', 'error');        
+    } else {
+        //Add created car to list
+        ui.addCarToList(car);
 
-    //Clear fields after submittion
-    ui.clearFields();
+        //Succes message
+        ui.showAlert('Car added', 'succes');
+
+        //Clear fields after submittion
+        ui.clearFields();
+
+    }
 
     e.preventDefault();
 });
