@@ -56,6 +56,9 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
     const engineCapacity = document.getElementById('engine-capacity').value;
     const hp = document.getElementById('hp').value;
     const img = URL.createObjectURL(e.target.image.files[0]);
+    img.onload = () => {
+        URL.revokeObjectURL(this.src);
+    }
     
     //Instantiete new car object
     const car = new Car(vin, brand, model, price, year, mileage, engineCapacity, hp, img);
