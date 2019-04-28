@@ -30,6 +30,18 @@ class UI {
         `;
         carList.append(newRow);
     }
+
+    clearFields() {
+        document.getElementById('vin-number').value = '';
+        document.getElementById('brand').value = '';
+        document.getElementById('model').value = '';
+        document.getElementById('price').value = '';
+        document.getElementById('year').value = '';
+        document.getElementById('mileage').value = '';
+        document.getElementById('engine-capacity').value = '';
+        document.getElementById('hp').value = '';
+        document.getElementById('image').value = '';
+    }
 }
 
 //Event Listeners for add car
@@ -53,6 +65,9 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
 
     //Add created car to list
     ui.addCarToList(car);
+
+    //Clear fields after submittion
+    ui.clearFields();
 
     e.preventDefault();
 });
