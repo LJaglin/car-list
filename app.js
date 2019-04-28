@@ -6,13 +6,31 @@ class Car {
         this.price = price;
         this.year = year;
         this.mileage = mileage;
-        this. engineCapacity = engineCapacity;
+        this.engineCapacity = engineCapacity;
         this.hp = hp;
         this.image = image;
     }
 }
 
-class UI {}
+class UI {
+    addCarToList(Car) {
+        const carList = document.getElementById('car-list');
+        const newRow = document.createElement('tr');
+        newRow.innerHTML = `
+        <td>${Car.vin}</td>
+        <td>${Car.brand}</td>
+        <td>${Car.model}</td>
+        <td>${Car.price}</td>
+        <td>${Car.year}</td>
+        <td>${Car.mileage}</td>
+        <td>${Car.engineCapacity}</td>
+        <td>${Car.hp}</td>
+        <td>Show photo</td>
+        <td><a href="#" class="delete">X</a></td>
+        `;
+        carList.append(newRow);
+    }
+}
 
 //Event Listeners for add car
 document.getElementById('car-form').addEventListener('submit', (e) => {
@@ -29,7 +47,12 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
     
     //Instantiete new car object
     const car = new Car(vin, brand, model, price, year, mileage, engineCapacity, hp, img);
-    console.log(car);
+    
+    //Instantiete UI
+    const ui = new UI();
+
+    //Add created car to list
+    ui.addCarToList(car);
 
     e.preventDefault();
 });
