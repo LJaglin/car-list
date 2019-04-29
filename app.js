@@ -57,6 +57,13 @@ class UI {
             divWithAlert.remove();
         }, 3000);
     }
+
+    deleteCar(target) {
+        if (target.className === 'delete' && confirm('Do you want delete this car?')) {
+            target.parentNode.parentNode.remove();
+            this.showAlert('Car removed', 'succes');
+        }
+    }
 }
 
 //Event Listeners for add car
@@ -99,4 +106,10 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
     }
 
     e.preventDefault();
+});
+
+//Event listener for delete car
+document.getElementById('car-list').addEventListener('click', (e) => {
+    const ui = new UI();
+    ui.deleteCar(e.target);
 });
