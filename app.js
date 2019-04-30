@@ -92,8 +92,14 @@ class Store {
         localStorage.setItem('cars', JSON.stringify(cars));
     }
 
-    static removeCar() {
-
+    static removeCar(vin) {
+        const cars = Store.getCars();
+        cars.forEach((car, index) => {
+            if (car.vin === vin) {
+                cars.splice(index, 1);
+            }
+        });
+        localStorage.setItem('cars', JSON.stringify(cars));
     }
 }
 
@@ -149,4 +155,6 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
 document.getElementById('car-list').addEventListener('click', (e) => {
     const ui = new UI();
     ui.deleteCar(e.target);
+    //Remove car from Local Storage
+    Store.removeCar(e.target.parentNode.parentNode.querySelector('td:first-child').innerText);
 });
