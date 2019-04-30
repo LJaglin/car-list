@@ -69,7 +69,13 @@ class UI {
 //Local Storage Class
 class Store {
     static getCars() {
-
+        let cars;
+        if (localStorage.getItem('cars') === null) {
+            cars = [];
+        } else {
+            cars = JSON.parse(localStorage.getItem('cars'));
+        }
+        return cars;
     }
 
     static displayCars() {
@@ -81,7 +87,7 @@ class Store {
     }
 
     static removeCar() {
-        
+
     }
 }
 
