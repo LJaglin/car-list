@@ -82,8 +82,10 @@ class Store {
 
     }
 
-    static addCar() {
-
+    static addCar(car) {
+        const cars = Store.getCars()       
+        cars.push(car);
+        localStorage.setItem('cars', JSON.stringify(cars));
     }
 
     static removeCar() {
@@ -121,6 +123,9 @@ document.getElementById('car-form').addEventListener('submit', (e) => {
     } else {
         //Add created car to list
         ui.addCarToList(car);
+
+        //Add created car to Local Storage
+        Store.addCar(car);
 
         //Succes message
         ui.showAlert('Car added', 'succes');
