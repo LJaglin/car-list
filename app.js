@@ -97,6 +97,9 @@ class Store {
     }
 }
 
+//Event Listener for DOM loaded
+document.addEventListener('DOMContentLoaded', Store.displayCars());
+
 //Event Listeners for add car
 document.getElementById('car-form').addEventListener('submit', (e) => {
     //Get values from the form
