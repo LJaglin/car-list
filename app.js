@@ -66,6 +66,25 @@ class UI {
     }
 }
 
+//Local Storage Class
+class Store {
+    static getCars() {
+
+    }
+
+    static displayCars() {
+
+    }
+
+    static addCar() {
+
+    }
+
+    static removeCar() {
+        
+    }
+}
+
 //Event Listeners for add car
 document.getElementById('car-form').addEventListener('submit', (e) => {
     //Get values from the form
