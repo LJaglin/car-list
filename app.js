@@ -79,7 +79,11 @@ class Store {
     }
 
     static displayCars() {
-
+        const cars = Store.getCars();
+        cars.forEach((car) => {
+            const ui = new UI();
+            ui.addCarToList(car);
+        });
     }
 
     static addCar(car) {
