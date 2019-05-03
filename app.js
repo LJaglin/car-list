@@ -25,7 +25,7 @@ class UI {
         <td>${Car.mileage}</td>
         <td>${Car.engineCapacity}</td>
         <td>${Car.hp}</td>
-        <td>Show photo</td>
+        <td><a href="#" class="image">Show photo</a></td>
         <td><a href="#" class="delete">X</a></td>
         `;
         carList.append(newRow);
